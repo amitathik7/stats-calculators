@@ -1,33 +1,28 @@
 import { Link } from "react-router-dom";
 
-import "../styles/HomePage.css"
+import "../styles/HomePage.css";
 
 const Home = () => {
 	const calculators = [
 		{
-			name: "Mean Calculator",
-			link: "/mean_calculator",
+			name: "Mean, Median, Mode Calculator",
+			link: "/mean_median_mode_calculator",
 		},
 		{
-			name: "Mode Calculator",
-			link: "/mode_calculator",
-		},
-		{
-			name: "Median Calculator",
-			link: "/median_calculator",
+			name: "Z-Score Calculator",
+			link: "/z_score_calculator",
 		},
 	];
 	return (
-		<div className="home_container">
-			<h1 className="title">Calculator Website Home Page Title</h1>
+		<div className="home_page_container">
+			<h1 className="home_page_title">Calculator Website Home Page Title</h1>
 			<div className="calculators_container">
 				{calculators.map((item, index) => (
-					<Link to={item.link} className="individual_calculator_container">
-						<div className="container_content">
-							<h3>{item.name}</h3>
-							<button className="navigation_button">Open Calculator</button>
-						</div>
-					</Link>
+					<div className="individual_calculator_container">
+						<Link to={item.link}>
+							<button className="calculator_navigation_button">{item.name}</button>
+						</Link>
+					</div>
 				))}
 			</div>
 		</div>
